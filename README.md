@@ -35,6 +35,6 @@
 
 ## Bônus:
 
-Implemente uma rota de login utilizando JWT (JSON Web Token) para autenticar usuários.
+Implemente a parte de auth utilizando JWT (JSON Web Token).
 
-Boa sorte! Have a good day.
+Boa sorte mestre ! Have a good day.
