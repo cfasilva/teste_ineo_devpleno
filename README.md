@@ -1,6 +1,6 @@
 # Teste Prático: Desenvolvedor Backend Pleno - INEO
 
-# Instruções:\*\*
+# Instruções:
 
 1. Construa uma API em Node.js utilizando Express para lidar com operações relacionadas a emolumentos, Protesto e Usuário.
 2. Utilize o ORM Prisma para interagir com o banco de dados SQL Server.
@@ -28,7 +28,7 @@
 
 # Observações:
 
-- Você é livre para escolher a estrutura do projeto e a organização do código, considerando o relacionamento entre as entidades "Cartório", "Usuário" e "Emolumento". Certifique-se de estabelecer corretamente os relacionamentos entre essas entidades, como associações de um para muitos ou muitos para muitos, conforme necessário para a funcionalidade da aplicação.
+- Você é livre para escolher a estrutura do projeto e a organização do código, considerando o relacionamento entre as entidades "Protesto", "Usuário" e "Emolumento". Certifique-se de estabelecer corretamente os relacionamentos entre essas entidades, como associações de um para muitos ou muitos para muitos, conforme necessário para a funcionalidade da aplicação.
 - Forneça instruções claras sobre como configurar e executar o projeto.
 - O código será avaliado com base em sua funcionalidade, eficiência, segurança e legibilidade.
 - Leve em consideração as melhores práticas de desenvolvimento e as especificações da vaga ao construir a API.
