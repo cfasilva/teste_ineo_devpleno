@@ -33,4 +33,8 @@
 - O código será avaliado com base em sua funcionalidade, eficiência, segurança e legibilidade.
 - Leve em consideração as melhores práticas de desenvolvimento e as especificações da vaga ao construir a API.
 
+## Bônus:
+
+Implemente uma rota de login utilizando JWT (JSON Web Token) para autenticar usuários.
+
 Boa sorte! Have a good day.
