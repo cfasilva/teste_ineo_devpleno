@@ -1,8 +1,6 @@
 # Teste Prático: Desenvolvedor Backend Pleno - INEO
 
-## Teste Prático
-
-**Instruções:**
+# Instruções:\*\*
 
 - Construa uma API em Node.js utilizando Express para lidar com operações relacionadas a emolumentos em cartórios.
 - Utilize o ORM Prisma para interagir com o banco de dados SQL Server.
@@ -25,7 +23,7 @@
      O valor do emolumento deve ser calculado de acordo com a porcentagem determinada pela regra para o valor do protesto fornecido.
 5. Escreva testes automatizados para as rotas da API, utilizando uma ferramenta de teste como Jest ou Mocha. Certifique-se de incluir testes para o cálculo do emolumento com base nos dados do protesto.
 
-**Observações:**
+# Observações:
 
 - Você é livre para escolher a estrutura do projeto e a organização do código, considerando o relacionamento entre as entidades "Cartório", "Usuário" e "Emolumento". Certifique-se de estabelecer corretamente os relacionamentos entre essas entidades, como associações de um para muitos ou muitos para muitos, conforme necessário para a funcionalidade da aplicação.
 - Forneça instruções claras sobre como configurar e executar o projeto.
