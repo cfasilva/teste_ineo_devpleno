@@ -1,40 +1,49 @@
-# Teste Prático: Desenvolvedor Backend Pleno - INEO
+# Sistema de Registro de Protestos e Emolumentos
 
-# Instruções:
+Este é um sistema desenvolvido em Express para realizar operações CRUD (Create, Read, Update, Delete) em três entidades: "Protesto", "Emolumento" e "Usuário". O sistema permite o registro de protestos contra dívidas não pagas, cálculo automático do emolumento com base nos dados do protesto e gerenciamento de usuários.
 
-1. Construa uma API em Node.js utilizando Express para lidar com operações relacionadas a emolumentos, Protesto e Usuário.
-2. Utilize o ORM Prisma para interagir com o banco de dados SQL Server.
-3. Siga as melhores práticas de desenvolvimento, mantendo o código limpo, modular e reutilizável.
-4. Após concluir o teste, envie o link do repositório para ruan.nunes@ineodigital.com.br.
-5. Você tem 3 dias para concluir o teste.
+## Funcionamento
 
-# Tarefas:
+### Entidades:
 
-1. Crie uma aplicação Express com rotas para realizar operações CRUD (Create, Read, Update, Delete) em três entidades: "Protesto", "Emolumento" e "Usuário".
-2. Utilize o banco de dados SQL Server e defina as seguintes tabelas:
-   - **Protesto:** Para armazenar os dados dos protestos, como valor do protesto e informações relevantes.
-   - **Emolumento:** Para armazenar os dados dos emolumentos, incluindo o valor do emolumento e qualquer outra informação necessária.
-   - **Usuário:** Para armazenar os dados dos usuários da aplicação, como nome, e-mail, senha, etc.
-3. Implemente validações de entrada para garantir que os dados dos protestos, emolumentos e usuários sejam inseridos corretamente no banco de dados.
-4. rota para criar emolumentos, onde o valor do emolumento seja calculado automaticamente com base nos dados do protesto. A regra para calcular o valor do emolumento é a seguinte:
+#### 1. Protesto
 
-- O valor do emolumento é determinado por uma porcentagem do valor do protesto, onde a porcentagem aumenta conforme o valor do protesto aumenta. Por exemplo:
-  - Para protestos de até R$ 1000, o valor do emolumento é 5% do valor do protesto.
-  - Para protestos entre R$ 1000 e R$ 5000, o valor do emolumento é 7.5% do valor do protesto.
-  - Para protestos acima de R$ 5000, o valor do emolumento é 10% do valor do protesto.
-    Ao criar um novo emolumento, o valor do emolumento deve ser calculado de acordo com essa regra.
+A entidade "Protesto" armazena os dados dos protestos registrados no sistema, incluindo o valor da dívida não paga e outras informações relevantes.
 
-5. Escreva testes automatizados para as rotas da API, utilizando uma ferramenta de teste como Jest ou Mocha. Certifique-se de incluir testes para o cálculo do emolumento com base nos dados do protesto.
+#### 2. Emolumento
 
-# Observações:
+A entidade "Emolumento" armazena os dados das taxas administrativas cobradas para cobrir os custos do serviço do tabelião, materiais utilizados e outras despesas administrativas. O valor do emolumento é calculado automaticamente com base nos dados do protesto.
 
-- Você é livre para escolher a estrutura do projeto e a organização do código, considerando o relacionamento entre as entidades "Protesto", "Usuário" e "Emolumento". Certifique-se de estabelecer corretamente os relacionamentos entre essas entidades, como associações de um para muitos ou muitos para muitos, conforme necessário para a funcionalidade da aplicação.
-- Forneça instruções claras sobre como configurar e executar o projeto.
-- O código será avaliado com base em sua funcionalidade, eficiência, segurança e legibilidade.
-- Leve em consideração as melhores práticas de desenvolvimento e as especificações da vaga ao construir a API.
+#### 3. Usuário
 
-## Bônus:
+A entidade "Usuário" armazena os dados dos usuários da aplicação, como nome, e-mail e senha.
 
-Implemente a parte de auth utilizando JWT (JSON Web Token).
+### Funcionalidades:
 
-Boa sorte mestre ! Have a good day.
+- **CRUD**: O sistema permite a criação, leitura, atualização e exclusão de registros de protestos, emolumentos e usuários.
+- **Cálculo Automático do Emolumento**: Ao criar um novo emolumento, o valor é calculado automaticamente com base nos dados do protesto, seguindo regras predefinidas.
+  - O valor do emolumento é determinado por uma porcentagem do valor do protesto, onde a porcentagem aumenta conforme o valor do protesto aumenta. Por exemplo:
+    - Para protestos de até R$ 1000, o valor do emolumento é 5% do valor do protesto.
+    - Para protestos entre R$ 1000 e R$ 5000, o valor do emolumento é 7.5% do valor do protesto.
+    - Para protestos acima de R$ 5000, o valor do emolumento é 10% do valor do protesto.
+      Ao criar um novo emolumento, o valor do emolumento é calculado de acordo com essa regra.
+
+## História Ilustrativa
+
+Imagine que João, um morador de Cidadópolis, emprestou dinheiro para seu amigo Pedro abrir um pequeno negócio. Infelizmente, Pedro não conseguiu pagar de volta o empréstimo a tempo, e João se viu sem escolha a não ser registrar um protesto contra a dívida não paga. João vai ao escritório de registros, onde um funcionário registra os detalhes do protesto em um sistema. Ele paga o emolumento correspondente, calculado automaticamente com base no valor da dívida não paga de acordo com regras predefinidas. Tanto o protesto quanto o emolumento são registrados no sistema, e João se torna um usuário registrado.
+
+## Testes Automatizados
+
+Os testes automatizados foram implementados utilizando a ferramenta Jest. Certifique-se de executar os testes para garantir o correto funcionamento das rotas da API, incluindo o cálculo do emolumento com base nos dados do protesto.
+
+## Desenvolvimento da API
+
+Para desenvolver a API, utilize o Node.js com o framework Express para lidar com as requisições HTTP. Utilize SQL para interagir com o banco de dados, garantindo um controle mais granular sobre as consultas e transações. Essa abordagem também oferece uma maior flexibilidade em relação à estrutura e desempenho da aplicação.
+
+## Controle de Acesso
+
+Implemente um controle de acesso na API para garantir que somente o usuário autenticado possa visualizar seus próprios emolumentos e protestos. Ao realizar consultas no banco de dados, verifique se o usuário logado possui permissão para acessar os dados solicitados.
+
+## Teste Técnico
+
+Você tem 3 dias para concluir este teste. Ao finalizar, envie o link do repositório para ruan.nunes@ineodigital.com.br. Certifique-se de seguir as instruções fornecidas e implementar as funcionalidades solicitadas de acordo com as especificações. Have a good day e Boa sorte!
