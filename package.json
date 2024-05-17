@@ -5,7 +5,8 @@
   "description": "Este é um sistema desenvolvido em Express para realizar operações CRUD (Create, Read, Update, Delete) em três entidades: \"Protesto\", \"Emolumento\" e \"Usuário\". O sistema permite o registro de protestos contra dívidas não pagas, cálculo automático do emolumento com base nos dados do protesto e gerenciamento de usuários.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex:migrate": "knex --knexfile knexfile.cjs migrate:latest"
   },
   "keywords": [],
   "author": "",
