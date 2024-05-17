@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node --watch .\\src\\server.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "knex:migrate": "knex --knexfile knexfile.cjs migrate:latest"
+    "migrate": "knex --knexfile knexfile.cjs migrate:latest"
   },
   "keywords": [],
   "author": "",
