@@ -11,11 +11,7 @@ routes.get('/', (req, res) => {
 })
 
 const usersController = new UsersController()
-routes.get('/users', usersController.index)
-routes.get('/users/:id', usersController.show)
-routes.post('/users', usersController.create)
-routes.put('/users/:id', usersController.update)
-routes.delete('/users/:id', usersController.delete)
+routes.post('/register', usersController.register)
 
 const protestsController = new ProtestsController()
 routes.get('/protests', protestsController.index)
