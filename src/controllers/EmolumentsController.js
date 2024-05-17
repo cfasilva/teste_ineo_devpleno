@@ -19,7 +19,24 @@ class EmolumentsController {
     }
 
     async create(req, res) {
-        const { value, protest_id } = req.body;
+        const { protest_id } = req.body;
+
+        const protest = await knex('protests').where('id', protest_id).first();
+
+        if (!protest) {
+            return res.status(400).json({ message: 'Protest not found' });
+        }
+
+        const totalValue = protest.total_value;
+        var value = 0;
+
+        if (totalValue <= 1000) {
+            value = totalValue * 0.05;
+        } else if (totalValue > 1000 && totalValue <= 5000) {
+            value = totalValue * 0.075;
+        } else if (totalValue > 5000) {
+            value = totalValue * 0.1;
+        }
     
         await knex('emoluments').insert({ value, protest_id });
     
@@ -28,7 +45,24 @@ class EmolumentsController {
 
     async update(req, res) {
         const { id } = req.params;
-        const { value, protest_id } = req.body;
+        const { protest_id } = req.body;
+
+        const protest = await knex('protests').where('id', protest_id).first();
+
+        if (!protest) {
+            return res.status(400).json({ message: 'Protest not found' });
+        }
+
+        const totalValue = protest.total_value;
+        var value = 0;
+
+        if (totalValue <= 1000) {
+            value = totalValue * 0.05;
+        } else if (totalValue > 1000 && totalValue <= 5000) {
+            value = totalValue * 0.075;
+        } else if (totalValue > 5000) {
+            value = totalValue * 0.1;
+        }
     
         await knex('emoluments').where('id', id).update({ value, protest_id });
     
